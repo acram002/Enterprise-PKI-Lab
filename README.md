@@ -1,6 +1,8 @@
 # AWS PKI Lab
 
-A two-tier Certificate Authority lab built on AWS EC2, using Windows Server 2022 and Active Directory Certificate Services (AD CS). Includes a public IIS web server hosting CRL and AIA distribution points, with a CA-signed TLS certificate.
+Purpose: Hands-on lab for learning PKI fundamentals. Building a certificate authority hierarchy, publishing revocation data, and issuing a trusted TLS certificate end-to-end.
+
+Overview: A two-tier Certificate Authority lab built on AWS EC2, using Windows Server 2022 and Active Directory Certificate Services (AD CS). Includes a public IIS web server hosting CRL and AIA distribution points, with a CA-signed TLS certificate.
 
 ---
 
