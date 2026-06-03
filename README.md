@@ -6,6 +6,19 @@ Overview: A two-tier Certificate Authority lab built on AWS EC2, using Windows S
 
 ---
 
+## Live Demo
+
+A live instance of this lab is currently running at **[pki.pki-forge.com](http://pki.pki-forge.com)**.
+
+Follow the steps below to walk through the full certificate trust flow yourself:
+
+1. **Observe the untrusted certificate** — navigate to [https://pki.pki-forge.com](https://pki.pki-forge.com). Your browser will show a certificate warning because the Root CA is not yet in your trust store.
+2. **Download the CA certificate** — navigate to [http://pki.pki-forge.com](http://pki.pki-forge.com) and download the `.p7b` certificate file.
+3. **Install and trust the certificate** — open the `.p7b` file and install it to the **Trusted Root Certification Authorities** store.
+4. **Verify trust** — navigate back to [https://pki.pki-forge.com](https://pki.pki-forge.com). The site should now load with a valid, trusted certificate issued by the lab's own CA.
+
+---
+
 ## Architecture
 
 | VM | Role | Notes |
