@@ -1,4 +1,4 @@
-# AWS PKI Lab
+# Enterprise PKI Lab
 
 Purpose: Hands-on lab for learning PKI fundamentals. Building a certificate authority hierarchy, publishing revocation data, and issuing a trusted TLS certificate end-to-end.
 
