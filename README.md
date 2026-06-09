@@ -12,10 +12,10 @@ A live instance of this lab is currently running at **[pki.pki-forge.com](http:/
 
 Follow the steps below to walk through the full certificate trust flow yourself:
 
-1. **Observe the untrusted certificate** — navigate to [https://pki.pki-forge.com](https://pki.pki-forge.com). Your browser will show a certificate warning because the Root CA is not yet in your trust store.
-2. **Download the CA certificate** — navigate to [http://pki.pki-forge.com](http://pki.pki-forge.com) and download the `.p7b` certificate file.
-3. **Install and trust the certificate** — open the `.p7b` file and install it to the **Trusted Root Certification Authorities** store.
-4. **Verify trust** — navigate back to [https://pki.pki-forge.com](https://pki.pki-forge.com). The site should now load with a valid, trusted certificate issued by the lab's own CA.
+1. **Observe the untrusted certificate**: navigate to [https://pki.pki-forge.com](https://pki.pki-forge.com). Your browser will show a certificate warning because the Root CA is not yet in your trust store.
+2. **Download the CA certificate**: navigate to [http://pki.pki-forge.com](http://pki.pki-forge.com) and download the `.p7b` certificate file.
+3. **Install and trust the certificate**: open the `.p7b` file and install it to the **Trusted Root Certification Authorities** store.
+4. **Verify trust**: navigate back to [https://pki.pki-forge.com](https://pki.pki-forge.com). The site should now load with a valid, trusted certificate issued by the lab's own CA.
 
 ---
 
@@ -125,7 +125,7 @@ Verify by navigating to `http://pki.yourdomain.com` — you should see the direc
 
 ## Verification
 
-1. **Before trusting the Root CA** — browse to `https://pki.yourdomain.com`. Expect a certificate error.
+1. **Before trusting the Root CA**: browse to `https://pki.yourdomain.com`. Expect a certificate error.
 2. **Download the Root CA cert** from `http://pki.yourdomain.com/indexHTTP/`.
 3. **Verify the thumbprint** before installing:
    ```
@@ -133,7 +133,7 @@ Verify by navigating to `http://pki.yourdomain.com` — you should see the direc
    ```
    Compare against the thumbprint on VM1.
 4. Install the Root CA cert to **Trusted Root Certification Authorities**.
-5. Browse again to `https://pki.yourdomain.com` — the padlock should now be green with a valid chain.
+5. Browse again to `https://pki.yourdomain.com`: the padlock should now be green with a valid chain.
 
 ---
 
@@ -172,3 +172,49 @@ certutil -hashfile <file.cer> SHA256   # Verify certificate thumbprint
 - Add OCSP responder as an alternative to CRL
 - Use GPO to auto-distribute the Root CA cert to domain-joined machines
 - Explore autoenrollment with Enterprise CA and certificate templates
+
+## Further Reading
+
+I created this lab/project by pulling from numerous articles, documentation, and videos. Here's a list of the sources I used.
+
+
+Solid PKI, Two-tier CA overview. Includes design tradeoffs (i.e. offline root on dedicated server h/w or portable h/w) 
+
+https://www.entrust.com/sites/default/files/documentation/whitepapers/offline-ca-best-practices-wp.pdf 
+
+ 
+
+Process for setting up offline root and AD CS issuing CA w/ AIA/CRL points. Includes HSM integration 
+
+https://docs.securosys.com/ms-pki-adcs/category/tutorials/ 
+
+ 
+
+Additional reading on setting up two-tier PKI w/ AD CS 
+
+https://techcommunity.microsoft.com/blog/microsoft-security-blog/step-by-step-2-tier-pki-lab/4413982 
+
+
+Further reading on two-tier PKI w/ AD CS. Helpful info on setting up HTTP web server (IIS) 
+https://www.windows-noob.com/forums/topic/16252-how-can-i-configure-pki-in-a-lab-on-windows-server-2016-part-1/
+
+
+Youtube video for cert template error 
+https://www.youtube.com/watch?v=fmpozm3j2bM
+
+ 
+Same as above, manual csr request for web server 
+
+https://www.gradenegger.eu/en/manual-application-for-a-web-server-certificate/ 
+
+ 
+
+Same as above, bypassing cert template error to issue certs to non-domain servers 
+
+https://www.reddit.com/r/sysadmin/comments/wws636/certificate_for_nondomain_server_using_microsoft/ 
+
+ 
+
+Further reading on manual custom request for web server to avoid web browser trust issues 
+
+https://techcommunity.microsoft.com/discussions/edgeinsiderdiscussions/how-do-i-get-edge-to-trust-our-internal-certificate-authority/785333/replies/827884 
