@@ -1,5 +1,7 @@
 # Enterprise PKI Lab
 
+***NOTE*** I have moved the web server from the AWS EC2 instance it was on to a self-hosted Ubuntu VM w/ routing through a Cloudflared tunnel (to not have to pay for it). However, the live demo is not functional now although you can visit the site at https://pki.pki-forge.com to see the updates to the project and the architecture before/after. Feel free to perform the lab as it is still a great way to learn PKI, AD CS, and web hosting!
+
 Purpose: Hands-on lab for learning PKI fundamentals. Building a certificate authority hierarchy, publishing revocation data, and issuing a trusted TLS certificate end-to-end.
 
 Overview: A two-tier Certificate Authority lab built on AWS EC2, using Windows Server 2022 and Active Directory Certificate Services (AD CS). Includes a public IIS web server hosting CRL and AIA distribution points, with a CA-signed TLS certificate.
