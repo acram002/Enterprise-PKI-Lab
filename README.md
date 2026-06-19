@@ -1,6 +1,8 @@
 # Enterprise PKI Lab
 
-UPDATE: I have moved the web server from the AWS EC2 instance it was on to a self-hosted Ubuntu VM w/ routing through a Cloudflared tunnel (to not have to pay for it). However, the live demo is not functional now although you can visit the site at https://pki.pki-forge.com to see the updates to the project and the architecture before/after. Feel free to perform the lab as it is still a great way to learn PKI, AD CS, and web hosting!
+UPDATE: I have moved the web server from the AWS EC2 instance it was on to a self-hosted Ubuntu VM w/ routing through a Cloudflared tunnel (to not have to pay for it). As a result, the live demo is not functional now although you can visit the site at https://pki.pki-forge.com to see the updates to the project and the architecture before/after. Feel free to perform the lab as it is still a great way to learn PKI, AD CS, and web hosting!
+
+---
 
 Purpose: Hands-on lab for learning PKI fundamentals. Building a certificate authority hierarchy, publishing revocation data, and issuing a trusted TLS certificate end-to-end.
 
